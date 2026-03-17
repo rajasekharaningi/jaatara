@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pinnacle Picks — Best Products on Amazon.in | Auto, Home, Beauty & Fashion</title>
+<meta name="description" content="Expert-curated Amazon.in picks across Auto, Home & Kitchen, Beauty and Fashion. Updated daily with honest reviews and best deals.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,600;0,800;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#111;--surface2:#1a1a1a;--border:#222;--text:#f0ece4;--muted:#888;--faint:#2a2a2a;--auto:#e8390e;--home:#2e9e6b;--beauty:#c2649a;--fashion:#8b5cf6;--accent:#e8390e;--accent2:#f5a623}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem 2.5rem;background:rgba(10,10,10,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.logo{font-family:'Barlow Condensed',sans-serif;font-size:1.7rem;font-weight:900;letter-spacing:.1em;color:var(--text);text-decoration:none}
+.logo span{color:var(--accent2)}
+.nav-links{display:flex;gap:0;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1rem;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-badge{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);border:1px solid var(--accent2);padding:.28rem .75rem;border-radius:2px}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:4rem;position:relative;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:6rem 3rem 6rem 4rem;z-index:2}
+.hero-kicker{font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent2);margin-bottom:1.5rem;animation:slideUp .8s both}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3.8rem,7.5vw,7rem);font-weight:900;line-height:.9;text-transform:uppercase;margin-bottom:1.8rem;animation:slideUp .8s .1s both}
+.hero-title em{font-family:'Playfair Display',serif;font-style:italic;color:var(--accent2);font-size:.52em;font-weight:400;display:block}
+.hero-sub{font-size:.76rem;color:var(--muted);line-height:1.8;max-width:380px;margin-bottom:2.5rem;animation:slideUp .8s .2s both}
+.hero-pills{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem;animation:slideUp .8s .25s both}
+.hero-pill{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;font-family:'DM Mono',monospace}
+.hero-pill.a{background:rgba(232,57,14,.15);color:var(--auto);border:1px solid rgba(232,57,14,.3)}
+.hero-pill.h{background:rgba(46,158,107,.15);color:var(--home);border:1px solid rgba(46,158,107,.3)}
+.hero-pill.b{background:rgba(194,100,154,.15);color:var(--beauty);border:1px solid rgba(194,100,154,.3)}
+.hero-pill.f{background:rgba(139,92,246,.15);color:var(--fashion);border:1px solid rgba(139,92,246,.3)}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;animation:slideUp .8s .3s both}
+.hero-right{position:relative;overflow:hidden}
+.hero-mosaic{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:1px;background:var(--border)}
+.mc{display:flex;align-items:center;justify-content:center;font-size:5rem}
+.mc.ac{background:radial-gradient(circle,rgba(232,57,14,.15),var(--bg) 70%)}
+.mc.hc{background:radial-gradient(circle,rgba(46,158,107,.15),var(--bg) 70%)}
+.mc.bc{background:radial-gradient(circle,rgba(194,100,154,.15),var(--bg) 70%)}
+.mc.fc{background:radial-gradient(circle,rgba(139,92,246,.15),var(--bg) 70%)}
+.mc span{animation:floatY 5s ease-in-out infinite}
+.mc:nth-child(2) span{animation-delay:-1.5s}
+.mc:nth-child(3) span{animation-delay:-3s}
+.mc:nth-child(4) span{animation-delay:-4.5s}
+.hero-stats{position:absolute;bottom:3rem;left:4rem;right:4rem;display:flex;gap:3rem;border-top:1px solid var(--border);padding-top:2rem}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:800;display:block}
+.stat-lbl{font-size:.6rem;letter-spacing:.15em;color:var(--muted);text-transform:uppercase}
+.ticker{padding:.65rem 0;overflow:hidden;background:linear-gradient(90deg,var(--auto),var(--home) 33%,var(--beauty) 66%,var(--fashion))}
+.ticker-inner{display:flex;white-space:nowrap;animation:ticker 32s linear infinite}
+.ticker-item{font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:0 2.5rem;color:#fff}
+.ticker-item::after{content:'◆';margin-left:2.5rem;opacity:.4}
+.niche-band{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.niche-tile{background:var(--surface);padding:2.5rem 2rem;text-decoration:none;color:var(--text);display:flex;flex-direction:column;gap:.8rem;transition:background .2s;position:relative;min-height:210px}
+.niche-tile:hover{background:var(--surface2)}
+.niche-tile::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px}
+.niche-tile.a::after{background:var(--auto)}
+.niche-tile.h::after{background:var(--home)}
+.niche-tile.b::after{background:var(--beauty)}
+.niche-tile.f::after{background:var(--fashion)}
+.niche-icon{font-size:2.4rem}
+.niche-name{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:800;text-transform:uppercase}
+.niche-desc{font-size:.62rem;color:var(--muted);line-height:1.6}
+.niche-count{font-size:.58rem;color:var(--muted);margin-top:auto;letter-spacing:.1em}
+.sw{padding:5rem 4rem;max-width:1400px;margin:0 auto}
+.sh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;border-bottom:1px solid var(--border);padding-bottom:1.5rem}
+.sl{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent2);display:block;margin-bottom:.4rem}
+.st{font-family:'Barlow Condensed',sans-serif;font-size:2.6rem;font-weight:800;text-transform:uppercase;line-height:1}
+.slink{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.slink:hover{color:var(--text)}
+.btn-p{background:var(--accent);color:#fff;font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;padding:.9rem 1.8rem;text-decoration:none;border:none;cursor:pointer;transition:opacity .2s,transform .15s;display:inline-block}
+.btn-p:hover{opacity:.85;transform:translateY(-2px)}
+.btn-g{background:transparent;color:var(--text);font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;padding:.9rem 1.8rem;text-decoration:none;border:1px solid var(--faint);cursor:pointer;transition:border-color .2s,transform .15s;display:inline-block}
+.btn-g:hover{border-color:var(--text);transform:translateY(-2px)}
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.pc{background:var(--surface);border:1px solid var(--border);position:relative;overflow:hidden;transition:border-color .2s,transform .2s;display:flex;flex-direction:column}
+.pc:hover{transform:translateY(-4px)}
+.pc.a:hover{border-color:var(--auto)}
+.pc.h:hover{border-color:var(--home)}
+.pc.b:hover{border-color:var(--beauty)}
+.pc.f:hover{border-color:var(--fashion)}
+.pbadge{position:absolute;top:1rem;left:1rem;z-index:2;font-size:.57rem;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .55rem;font-family:'DM Mono',monospace}
+.bh{background:var(--auto);color:#fff}
+.bn{background:var(--accent2);color:#000}
+.bd{background:#1a6e3c;color:#4eff9a}
+.bb{background:var(--beauty);color:#fff}
+.bf{background:var(--fashion);color:#fff}
+.bho{background:var(--home);color:#fff}
+.pi{width:100%;aspect-ratio:4/3;background:var(--surface2);display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid var(--border)}
+.pi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.pc:hover .pi img{transform:scale(1.05)}
+.pb{padding:1.4rem;flex:1;display:flex;flex-direction:column}
+.pcat{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem}
+.pcat.a{color:var(--auto)}
+.pcat.h{color:var(--home)}
+.pcat.b{color:var(--beauty)}
+.pcat.f{color:var(--fashion)}
+.pname{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;line-height:1.2;margin-bottom:.4rem}
+.pdesc{font-size:.65rem;color:var(--muted);line-height:1.7;margin-bottom:.8rem;flex:1}
+.pfoot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:.9rem;margin-top:auto}
+.pprice{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:800}
+.pold{font-size:.7rem;color:var(--muted);text-decoration:line-through;margin-left:.4rem}
+.stars{color:var(--accent2);font-size:.7rem}
+.rrow{display:flex;align-items:center;gap:.4rem;margin-bottom:.6rem}
+.rcnt{font-size:.57rem;color:var(--muted)}
+.bamz{display:flex;align-items:center;justify-content:center;gap:.4rem;color:#fff;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;padding:.65rem 1rem;text-decoration:none;transition:opacity .2s;width:100%;margin-top:.9rem;border:none;cursor:pointer}
+.bamz:hover{opacity:.85}
+.bamz.a{background:var(--auto)}
+.bamz.h{background:var(--home)}
+.bamz.b{background:var(--beauty)}
+.bamz.f{background:var(--fashion)}
+.bg-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.bgc{background:var(--surface);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:border-color .2s,transform .2s;display:flex;flex-direction:column;overflow:hidden}
+.bgc:hover{transform:translateY(-3px)}
+.bgc.a:hover{border-color:var(--auto)}
+.bgc.h:hover{border-color:var(--home)}
+.bgc.b:hover{border-color:var(--beauty)}
+.bgc.f:hover{border-color:var(--fashion)}
+.bgt{aspect-ratio:16/9;overflow:hidden;border-bottom:1px solid var(--border)}
+.bgt img{width:100%;height:100%;object-fit:cover;display:block}
+.bgb{padding:1.2rem;flex:1;display:flex;flex-direction:column}
+.bgcat{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem}
+.bgtitle{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;line-height:1.2;margin-bottom:.5rem}
+.bgmeta{font-size:.58rem;color:var(--muted);margin-top:auto;padding-top:.8rem;border-top:1px solid var(--border)}
+.disc{padding:1.8rem 4rem;background:var(--surface);border-top:1px solid var(--border)}
+.disc-in{max-width:1400px;margin:0 auto;display:flex;gap:1.5rem;align-items:flex-start}
+.disc-txt{font-size:.63rem;color:var(--muted);line-height:1.8}
+.disc-txt strong{color:var(--text)}
+footer{padding:4rem 4rem 2rem;border-top:1px solid var(--border);max-width:1400px;margin:0 auto}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:2rem;margin-bottom:3rem}
+.ftag{font-size:.65rem;color:var(--muted);line-height:1.8;max-width:230px;margin-top:.6rem}
+.fct{font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;margin-bottom:1rem}
+.fl{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.fl a{font-size:.63rem;color:var(--muted);text-decoration:none;transition:color .2s}
+.fl a:hover{color:var(--text)}
+.fb{border-top:1px solid var(--border);padding-top:1.8rem;display:flex;justify-content:space-between}
+.fc{font-size:.6rem;color:var(--faint)}
+.nh{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;text-transform:uppercase;margin-bottom:1.5rem;letter-spacing:.05em}
+@keyframes slideUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@media(max-width:1100px){.hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:6rem 2rem 4rem}.hero-stats{gap:1.5rem}.pg,.bg-row{grid-template-columns:repeat(2,1fr)}.niche-band{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.nav-links{display:none}.pg,.bg-row{grid-template-columns:1fr}.niche-band{grid-template-columns:1fr 1fr}.sw{padding:3rem 1.5rem}.fg{grid-template-columns:1fr}.fb{flex-direction:column;gap:.4rem}.disc{padding:1.5rem}footer{padding:3rem 1.5rem 2rem}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">PINNACLE<span>PICKS</span></a>
+  <ul class="nav-links">
+    <li><a href="#auto">🚗 Auto</a></li>
+    <li><a href="#home">🏠 Home</a></li>
+    <li><a href="#beauty">💄 Beauty</a></li>
+    <li><a href="#fashion">👗 Fashion</a></li>
+    <li><a href="#guides">Guides</a></li>
+  </ul>
+  <span class="nav-badge">Amazon.in Partner</span>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-kicker">// 4 Niches · 2,000+ Products · Updated Daily</p>
+    <h1 class="hero-title"><em>Everything You Need</em>HANDPICKED<br>FOR YOU</h1>
+    <p class="hero-sub">From auto gear to skincare, kitchen must-haves to fashion essentials — every product expert-reviewed and Amazon.in verified.</p>
+    <div class="hero-pills">
+      <span class="hero-pill a">🚗 Auto</span>
+      <span class="hero-pill h">🏠 Home & Kitchen</span>
+      <span class="hero-pill b">💄 Beauty</span>
+      <span class="hero-pill f">👗 Fashion</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#products" class="btn-p">Shop All Products</a>
+      <a href="#guides" class="btn-g">Buying Guides</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-mosaic">
+      <div class="mc ac"><span>🚗</span></div>
+      <div class="mc hc"><span>🏠</span></div>
+      <div class="mc bc"><span>💄</span></div>
+      <div class="mc fc"><span>👗</span></div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div><span class="stat-num">2,000+</span><span class="stat-lbl">Products Reviewed</span></div>
+    <div><span class="stat-num">4</span><span class="stat-lbl">Niches Covered</span></div>
+    <div><span class="stat-num">Daily</span><span class="stat-lbl">Deal Updates</span></div>
+  </div>
+</section>
+
+<div class="ticker"><div class="ticker-inner">
+  <span class="ticker-item">🚗 Best Dash Cams 2026</span><span class="ticker-item">🏠 Kitchen Deals Today</span><span class="ticker-item">💄 Top Skincare Picks</span><span class="ticker-item">👗 Fashion Under ₹4,000</span><span class="ticker-item">🔋 Jump Starter Sale</span><span class="ticker-item">🌿 Organic Skincare</span><span class="ticker-item">👜 Trending Bags</span><span class="ticker-item">☕ Coffee Maker Deals</span>
+  <span class="ticker-item">🚗 Best Dash Cams 2026</span><span class="ticker-item">🏠 Kitchen Deals Today</span><span class="ticker-item">💄 Top Skincare Picks</span><span class="ticker-item">👗 Fashion Under ₹4,000</span><span class="ticker-item">🔋 Jump Starter Sale</span><span class="ticker-item">🌿 Organic Skincare</span><span class="ticker-item">👜 Trending Bags</span><span class="ticker-item">☕ Coffee Maker Deals</span>
+</div></div>
+
+<div class="niche-band">
+  <a href="#auto" class="niche-tile a"><span class="niche-icon">🚗</span><span class="niche-name" style="color:var(--auto)">Auto</span><span class="niche-desc">Dash cams, jump starters, detailing kits & tools.</span><span class="niche-count">680+ products →</span></a>
+  <a href="#home" class="niche-tile h"><span class="niche-icon">🏠</span><span class="niche-name" style="color:var(--home)">Home & Kitchen</span><span class="niche-desc">Air fryers, coffee makers, smart home & bedding.</span><span class="niche-count">540+ products →</span></a>
+  <a href="#beauty" class="niche-tile b"><span class="niche-icon">💄</span><span class="niche-name" style="color:var(--beauty)">Beauty</span><span class="niche-desc">Skincare serums, hair tools, fragrances & makeup.</span><span class="niche-count">420+ products →</span></a>
+  <a href="#fashion" class="niche-tile f"><span class="niche-icon">👗</span><span class="niche-name" style="color:var(--fashion)">Fashion</span><span class="niche-desc">Trending outfits, bags, accessories & shoes.</span><span class="niche-count">360+ products →</span></a>
+</div>
+
+<section id="products" class="sw">
+  <div class="sh"><div><span class="sl">// Live from Amazon.in</span><h2 class="st">Today's Top Picks</h2></div><a href="https://www.amazon.in/?tag=jaatara-21" target="_blank" class="slink">Browse Amazon →</a></div>
+
+  <p class="nh" id="auto" style="color:var(--auto)">🚗 Auto</p>
+  <div class="pg" style="margin-bottom:3rem">
+    <div class="pc a"><span class="pbadge bh">🔥 Hot</span><div class="pi"><img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=400&h=300&fit=crop" alt="Dash Cam"></div><div class="pb"><p class="pcat a">// Dash Cam</p><h3 class="pname">Vantrue E1 Lite 4K Dash Cam</h3><div class="rrow"><span class="stars">★★★★★</span><span class="rcnt">(6,241)</span></div><p class="pdesc">4K WiFi GPS dash cam with night vision & parking mode.</p><div class="pfoot"><div><span class="pprice">₹10,999</span><span class="pold">₹13,999</span></div></div><a href="https://www.amazon.in/s?k=vantrue+e1+lite+4k+dash+cam&tag=jaatara-21" target="_blank" class="bamz a">🛒 Buy on Amazon.in</a></div></div>
+    <div class="pc a"><span class="pbadge bd">💰 Deal</span><div class="pi"><img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400&h=300&fit=crop" alt="Jump Starter"></div><div class="pb"><p class="pcat a">// Jump Starter</p><h3 class="pname">NOCO Boost Plus GB40 1000A</h3><div class="rrow"><span class="stars">★★★★★</span><span class="rcnt">(32,500)</span></div><p class="pdesc">Lithium jump starter for gas & diesel. Spark-proof.</p><div class="pfoot"><div><span class="pprice">₹8,499</span><span class="pold">₹9,999</span></div></div><a href="https://www.amazon.in/s?k=noco+boost+gb40+jump+starter&tag=jaatara-21" target="_blank" class="bamz a">🛒 Buy on Amazon.in</a></div></div>
+    <div class="pc a"><div class="pi"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="Detailing Kit"></div><div class="pb"><p class="pcat a">// Detailing</p><h3 class="pname">Chemical Guys 16-Piece Kit</h3><div class="rrow"><span class="stars">★★★★★</span><span class="rcnt">(14,832)</span></div><p class="pdesc">Complete wash, wax, tire shine & microfiber kit.</p><div class="pfoot"><div><span class="pprice">₹6,299</span><span class="pold">₹9,299</span></div></div><a href="https://www.amazon.in/s?k=chemical+guys+detailing+kit&tag=jaatara-21" target="_blank" class="bamz a">🛒 Buy on Amazon.in</a></div></div>
+    <div class="pc a"><span class="pbadge bd">💰 Deal</span><div class="pi"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400&h=300&fit=crop" alt="OBD2 Scanner"></div><div class="pb"><p class="pcat a">// Diagnostics</p><h3 class="pname">INNOVA OBD2 Scanner</h3><div class="rrow"><span class="stars">★★★★★</span><span class="rcnt">(11,050)</span></div><p class="pdesc">Read & clear check engine codes. All 1996+ vehicles.</p><div class="pfoot"><div><span class="pprice">₹2,499</span><span class="pold">₹3,799</span></div></div><a href="https://www.amazon.in/s?k=obd2+diagnostic+scanner&tag=jaatara-21" target="_blank" class="bamz a">🛒 Buy on Amazon.in</a></div></div>
+  </div>
+
+  <p class="nh" id="home" style="color:var(--home)">🏠 Home & Kitchen</p>
+  <div class="pg" style="margin-bottom:3rem">
+    <div class="pc h"><span class="pbadge bho">🏠 Top Pick</span><div class="pi"><img src="https://images.unsplash.com/photo-1648170286710-b42e1cc7bb8b?w=400&h=300&fit=crop" alt="Air Fryer"></div><div class="pb"><p class="pcat h">// Air Fryer</p><h3 class="pname">Ninja AF101 4-Qt Air Fryer</h3><div class="rrow"><span class="stars">★★★★★</span><span class="rcnt">(44,200)</span></div><p class="pdesc">4-qt, 4 cooking functions, 75% less fat. Dishwasher safe.</p><div class="pfoot"><div><span class="pprice">₹7,499</span><span class="pold">₹10,999</span></div></div><a href="https://www.amazon.in/s?k=ninja+air+fryer&tag=jaatara-21" target="_blank" class="bamz h">🛒 Buy on Amazon.in</a></div></div>
+    <div class="pc h"><div class="pi"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&fit=crop" alt="Coffee Maker"></div><div class="pb"><p class="pcat h">// Coffee</p><h3 class="pname">Breville Barista Express</h3><div class="rrow"><span class="stars">★★★★★</span><span class="rcnt">(19,800)</span></div><p class="pdesc">Built-in grinder, 15-bar pressure, steam wand. Café quality.</p><div class="pfoot"><div><span class="pprice">₹24,999</span><span class="pold">₹59,999</span></div></div><a href="https://www.amazon.in/s?k=breville+barista+express&tag=jaatara-21" target="_blank" class="bamz h">🛒 Buy on Amazon.in</a></div></div>
+    <div class="pc h"><span class="pbadge bd">💰 Deal</span><div class="pi"><img src="https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&h=300&fit=crop" alt="Instant Pot"></div><div class="pb"><p class="pcat h">// Appliance</p><h3 class="pname">Instant Pot Duo 7-in-1 6Qt</h3><div class="rrow"><span class="stars">★★★★☆</span><span class="rcnt">(1,38,000)</span></div><p class="pdesc">Pressure cooker, slow cooker, rice cooker & more in one.</p><div class="pfoot"><div><span class="pprice">₹4,999</span><span class="pold">₹8,499</span></div></div><a href="https://www.amazon.in/s?k=instant+pot+duo+6+quart&tag=jaatara-21" target="_blank" class="bamz h">🛒 Buy on Amazon.in</a></div></div>
+    <div class="pc h"><div class="pi"><img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=400&h=300&fit=crop" alt="Comforter"></div><div class="pb"><p class="pcat h">// Bedding</p><h3 class="pname">Amazon Basics Microfibre Comforter</h3><div class="rrow"><span class="stars">★★★★★</span><span class="rcnt">(55,400)</span></div><p class="pdesc">Ultra-soft, machine washable. Queen size. All seasons.</p><div class="pfoot"><div><span class="pprice">₹3,299</span><span class="pold">₹4,599</span></div></div><a href="https://www.amazon.in/s?k=amazon+basics+microfibre+comforter&tag=jaatara-21" target="_blank" class="bamz h">🛒 Buy on Amazon.in</a></div></div>
+  </div>
+
+  <p class="nh" id="beauty" style="color:var(--beauty)">💄 Beauty</p>
+  <div class="pg" style="margin-bottom:3rem">
+    <div class="pc b"><span class="pbadge bb">💄 #1 Seller</span><div class="pi"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=300&fit=crop" alt="CeraVe Cream"></div><div class="pb"><p class="pcat b">// Skincare</p><h3 class="pname">CeraVe Moisturising Cream</h3><div class="rrow"><span class="stars">★★★★★</span><span class="rcnt">(87,000)</span></div><p class="pdesc">3 ceramides, 24-hr hydration. Dermatologist recommended.</p><div class="pfoot"><div><span class="pprice">₹1,597</span></div></div><a href="https://www.amazon.in/s?k=cerave+moisturising+cream&tag=jaatara-21" target="_blank" class="bamz b">🛒 Buy on Amazon.in</a></div></div>
+    <div class="pc b"><span class="pbadge bb">✨ Viral</span><div class="pi"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=300&fit=crop" alt="Vitamin C Serum"></div><div class="pb"><p class="pcat b">// Serum</p><h3 class="pname">TruSkin Vitamin C Serum</h3><div class="rrow"><span class="stars">★★★★★</span><span class="rcnt">(93,000)</span></div><p class="pdesc">Brightens, firms & fades dark spots. 93K+ reviews.</p><div class="pfoot"><div><span class="pprice">₹1,849</span><span class="pold">₹3,299</span></div></div><a href="https://www.amazon.in/s?k=truskin+vitamin+c+serum&tag=jaatara-21" target="_blank" class="bamz b">🛒 Buy on Amazon.in</a></div></div>
+    <div class="pc b"><span class="pbadge bn">New</span><div class="pi"><img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=400&h=300&fit=crop" alt="Hair Dryer"></div><div class="pb"><p class="pcat b">// Haircare</p><h3 class="pname">Dyson Supersonic Hair Dryer</h3><div class="rrow"><span class="stars">★★★★★</span><span class="rcnt">(29,100)</span></div><p class="pdesc">Fast dry, intelligent heat control. Reduces frizz & flyaways.</p><div class="pfoot"><div><span class="pprice">₹27,999</span><span class="pold">₹35,999</span></div></div><a href="https://www.amazon.in/s?k=dyson+supersonic+hair+dryer&tag=jaatara-21" target="_blank" class="bamz b">🛒 Buy on Amazon.in</a></div></div>
+    <div class="pc b"><span class="pbadge bd">💰 Under ₹1,300</span><div class="pi"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&h=300&fit=crop" alt="Foundation"></div><div class="pb"><p class="pcat b">// Makeup</p><h3 class="pname">Maybelline Fit Me Foundation</h3><div class="rrow"><span class="stars">★★★★★</span><span class="rcnt">(61,000)</span></div><p class="pdesc">Matte finish. 40 shades. SPF 22. Lightweight coverage.</p><div class="pfoot"><div><span class="pprice">₹1,097</span></div></div><a href="https://www.amazon.in/s?k=maybelline+fit+me+matte+foundation&tag=jaatara-21" target="_blank" class="bamz b">🛒 Buy on Amazon.in</a></div></div>
+  </div>
+
+  <p class="nh" id="fashion" style="color:var(--fashion)">👗 Fashion</p>
+  <div class="pg">
+    <div class="pc f"><span class="pbadge bf">👜 Trending</span><div class="pi"><img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=300&fit=crop" alt="Crossbody Bag"></div><div class="pb"><p class="pcat f">// Bags</p><h3 class="pname">Fossil Fiona Crossbody Bag</h3><div class="rrow"><span class="stars">★★★★☆</span><span class="rcnt">(3,800)</span></div><p class="pdesc">Genuine leather, adjustable strap. 6 colours. Everyday perfect.</p><div class="pfoot"><div><span class="pprice">₹6,799</span><span class="pold">₹9,999</span></div></div><a href="https://www.amazon.in/s?k=fossil+women+crossbody+leather+bag&tag=jaatara-21" target="_blank" class="bamz f">🛒 Buy on Amazon.in</a></div></div>
+    <div class="pc f"><span class="pbadge bf">👗 Best Seller</span><div class="pi"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=300&fit=crop" alt="Midi Dress"></div><div class="pb"><p class="pcat f">// Clothing</p><h3 class="pname">Women's Flowy Midi Dress</h3><div class="rrow"><span class="stars">★★★★★</span><span class="rcnt">(12,600)</span></div><p class="pdesc">20+ colours. XS–3X. Wrinkle-resistant. Day to night.</p><div class="pfoot"><div><span class="pprice">₹2,999</span></div></div><a href="https://www.amazon.in/s?k=women+flowy+midi+dress&tag=jaatara-21" target="_blank" class="bamz f">🛒 Buy on Amazon.in</a></div></div>
+    <div class="pc f"><div class="pi"><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=300&fit=crop" alt="Sunglasses"></div><div class="pb"><p class="pcat f">// Accessories</p><h3 class="pname">Ray-Ban Justin Classic Polarized</h3><div class="rrow"><span class="stars">★★★★★</span><span class="rcnt">(17,200)</span></div><p class="pdesc">100% UV protection. Nylon frame. Timeless polarized style.</p><div class="pfoot"><div><span class="pprice">₹7,499</span><span class="pold">₹12,999</span></div></div><a href="https://www.amazon.in/s?k=ray-ban+justin+polarized+sunglasses&tag=jaatara-21" target="_blank" class="bamz f">🛒 Buy on Amazon.in</a></div></div>
+    <div class="pc f"><span class="pbadge bd">💰 Deal</span><div class="pi"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop" alt="Watch"></div><div class="pb"><p class="pcat f">// Accessories</p><h3 class="pname">Timex Weekender 38mm Watch</h3><div class="rrow"><span class="stars">★★★★★</span><span class="rcnt">(28,400)</span></div><p class="pdesc">Interchangeable straps, Indiglo night-light. Timeless style.</p><div class="pfoot"><div><span class="pprice">₹3,299</span><span class="pold">₹4,599</span></div></div><a href="https://www.amazon.in/s?k=timex+weekender+watch&tag=jaatara-21" target="_blank" class="bamz f">🛒 Buy on Amazon.in</a></div></div>
+  </div>
+</section>
+
+<section id="guides" class="sw" style="padding-top:0">
+  <div class="sh"><div><span class="sl">// Expert Research</span><h2 class="st">Buying Guides</h2></div></div>
+  <div class="bg-row">
+    <a href="#" class="bgc a"><div class="bgt"><img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=400&h=225&fit=crop" alt="Dash Cam Guide"></div><div class="bgb"><p class="bgcat" style="color:var(--auto)">// Auto</p><h3 class="bgtitle">Best Dash Cams 2026</h3><div class="bgmeta">Mar 2026 • 12 min read</div></div></a>
+    <a href="#" class="bgc h"><div class="bgt"><img src="https://images.unsplash.com/photo-1648170286710-b42e1cc7bb8b?w=400&h=225&fit=crop" alt="Air Fryer Guide"></div><div class="bgb"><p class="bgcat" style="color:var(--home)">// Home & Kitchen</p><h3 class="bgtitle">Best Air Fryers 2026</h3><div class="bgmeta">Feb 2026 • 9 min read</div></div></a>
+    <a href="#" class="bgc b"><div class="bgt"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=225&fit=crop" alt="Skincare Guide"></div><div class="bgb"><p class="bgcat" style="color:var(--beauty)">// Beauty</p><h3 class="bgtitle">Best Skincare Routine on Amazon.in</h3><div class="bgmeta">Mar 2026 • 10 min read</div></div></a>
+    <a href="#" class="bgc f"><div class="bgt"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=225&fit=crop" alt="Fashion Guide"></div><div class="bgb"><p class="bgcat" style="color:var(--fashion)">// Fashion</p><h3 class="bgtitle">Best Amazon.in Fashion Under ₹4,000</h3><div class="bgmeta">Mar 2026 • 7 min read</div></div></a>
+  </div>
+</section>
+
+<div class="disc"><div class="disc-in"><span style="font-size:1.3rem;flex-shrink:0">ℹ️</span><p class="disc-txt"><strong>Affiliate Disclosure:</strong> Pinnacle Picks participates in the Amazon Associates Program. When you purchase through our links, we may earn a small commission at no extra cost to you.</p></div></div>
+
+<footer>
+  <div class="fg">
+    <div><a href="/" class="logo" style="display:block;margin-bottom:.8rem">PINNACLE<span>PICKS</span></a><p class="ftag">Expert-reviewed Amazon.in picks across 4 niches. Honest reviews, daily deals, zero fluff.</p></div>
+    <div><div class="fct" style="color:var(--auto)">🚗 Auto</div><ul class="fl"><li><a href="#auto">Dash Cams</a></li><li><a href="#auto">Jump Starters</a></li><li><a href="#auto">Detailing</a></li></ul></div>
+    <div><div class="fct" style="color:var(--home)">🏠 Home</div><ul class="fl"><li><a href="#home">Air Fryers</a></li><li><a href="#home">Coffee Makers</a></li><li><a href="#home">Bedding</a></li></ul></div>
+    <div><div class="fct" style="color:var(--beauty)">💄 Beauty</div><ul class="fl"><li><a href="#beauty">Skincare</a></li><li><a href="#beauty">Haircare</a></li><li><a href="#beauty">Makeup</a></li></ul></div>
+    <div><div class="fct" style="color:var(--fashion)">👗 Fashion</div><ul class="fl"><li><a href="#fashion">Bags</a></li><li><a href="#fashion">Clothing</a></li><li><a href="#fashion">Watches</a></li></ul></div>
+  </div>
+  <div class="fb"><p class="fc">© 2026 Pinnacle Picks — Amazon.in Affiliate Site</p><p class="fc">Amazon & its logo are trademarks of Amazon.in (Amazon Seller Services Private Limited)</p></div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e,i) => {
+    if(e.isIntersecting){
+      setTimeout(()=>{e.target.style.opacity='1';e.target.style.transform='translateY(0)';},i*80);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.05});
+document.querySelectorAll('.pc,.niche-tile,.bgc').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(20px)';
+  el.style.transition='opacity .5s ease,transform .5s ease,border-color .2s';
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
